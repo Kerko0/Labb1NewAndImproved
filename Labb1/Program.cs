@@ -11,10 +11,15 @@ class Program
 
 class App
 {
-    public void Run(string[] args)      
-    { 
-        Console.WriteLine("Please input a random string of numbers and letters.");
-        string input = Console.ReadLine();
+    public void Run(string[] args)
+    {
+        string input;
+        do
+        {
+            Console.WriteLine("Please input a random string of numbers and letters.");
+            input = Console.ReadLine();
+            
+        } while (string.IsNullOrEmpty(input));
         
         IndexedString indexedString = new IndexedString(input);
 
