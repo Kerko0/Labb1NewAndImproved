@@ -11,10 +11,10 @@ public class IndexedString
         
         for (int i = 0; i < _inputString.Length; i++)
         {
-            char numberToMatch =  _inputString[i];
+            char numToMatch =  _inputString[i];
             string substringToSearch = _inputString.Substring(i+1, _inputString.Length-i-1);
             
-            int matchingNumIndexOf = substringToSearch.IndexOf(numberToMatch);
+            int matchingNumIndexOf = substringToSearch.IndexOf(numToMatch);
             if (matchingNumIndexOf != -1)
             {
                 int startIndex = i;
