@@ -11,14 +11,14 @@ public class IndexedString
         
         for (int i = 0; i < _inputString.Length; i++)
         {
-            char currentChar =  _inputString[i];
+            char numberToMatch =  _inputString[i];
             string substringToSearch = _inputString.Substring(i+1, _inputString.Length-i-1);
             
-            int matchingCharIndexOf = substringToSearch.IndexOf(currentChar);
-            if (matchingCharIndexOf != -1)
+            int matchingNumIndexOf = substringToSearch.IndexOf(numberToMatch);
+            if (matchingNumIndexOf != -1)
             {
                 int startIndex = i;
-                int length = matchingCharIndexOf + 2;
+                int length = matchingNumIndexOf + 2;
                 
                 if (_inputString.Substring(startIndex, length).Any(Char.IsLetter))
                 {
@@ -36,7 +36,6 @@ public class IndexedString
         {
             for (int i = 0; i < _inputString.Length; i++)
             {
-                
                 if (Enumerable.Range(index.Start, index.Length).Contains(i))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -45,13 +44,9 @@ public class IndexedString
                 {
                     Console.ForegroundColor = ConsoleColor.White;
                 }
-            
                 Console.Write(_inputString[i]);
-        
             }
-            
             Console.WriteLine();
-            
         }
     }
     
