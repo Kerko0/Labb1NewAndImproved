@@ -67,14 +67,4 @@ public class IndexedString
     {
         return Indexes.Sum(index => Convert.ToInt64(InputString.Substring(index.Start, index.Length)));
     }
-    
-    public List<Index> GetIndexes()
-    {
-        return Indexes;
-    }
-
-    public string GetInputString()
-    {
-        return InputString;
-    }
 }
