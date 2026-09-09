@@ -44,4 +44,3 @@ for (int i = 0; i < input.Length; i++)
 }
 
 Console.WriteLine($"Sum of all numbers marked in red: {sum}");
-
