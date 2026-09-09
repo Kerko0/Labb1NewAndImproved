@@ -2,13 +2,13 @@ namespace Labb1;
 
 public class IndexedString
 {
-    private string InputString { get; set; }
-    private List<Index> Indexes { get; set; }
+    private readonly string _inputString;
+    private readonly List<Index> _indexes;
     
     public IndexedString (string input)
     {
-        InputString = input;
-        Indexes = IndexString(input);
+        _inputString = input;
+        _indexes = IndexString(input);
     }
     
     private List<Index> IndexString(string input)
@@ -40,9 +40,9 @@ public class IndexedString
 
     public void PrintAndColor()
     {
-        foreach (var index in Indexes)
+        foreach (var index in _indexes)
         {
-            for (int i = 0; i < InputString.Length; i++)
+            for (int i = 0; i < _inputString.Length; i++)
             {
                 
                 if (Enumerable.Range(index.Start, index.Length).Contains(i))
@@ -54,7 +54,7 @@ public class IndexedString
                     Console.ForegroundColor = ConsoleColor.White;
                 }
             
-                Console.Write(InputString[i]);
+                Console.Write(_inputString[i]);
         
             }
             
@@ -65,6 +65,6 @@ public class IndexedString
     
     public long TotalSum()
     {
-        return Indexes.Sum(index => Convert.ToInt64(InputString.Substring(index.Start, index.Length)));
+        return _indexes.Sum(index => Convert.ToInt64(_inputString.Substring(index.Start, index.Length)));
     }
 }
